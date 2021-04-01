@@ -1,10 +1,18 @@
-<%= form_with model:book, local:true do |f| %>
-  <% if book.errors.any? %>
+<!--以下デバッグ-->
+<!--<%#= form_with model:book, local:true do |f| %>-->
+<%= form_with model:@book, local:true do |f| %>
+  <%# if book.errors.any? %>
+  <% if @book.errors.any? %>
+<!--デバッグここまで-->
     <div id="error_explanation">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+<!--以下デバッグ-->
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <!--<h2><%#= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>-->
 
       <ul>
-      <% book.errors.full_messages.each do |message| %>
+      <% @book.errors.full_messages.each do |message| %>
+      <!--<#% book.errors.full_messages.each do |message| %>-->
+<!--デバッグここまで-->
         <li><%= message %></li>
       <% end %>
       </ul>
